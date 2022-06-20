@@ -1,0 +1,27 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.nav{
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 65px;
+    @include m.tablet { 
+        height:calc(65px + 5rem);
+     }
+    &__logo{
+        width:18rem;
+        @include m.tablet { 
+            width:25rem;
+         }
+    }
+
+    &__toggle{
+        font-size: 1.8rem;
+        cursor: pointer;
+        @include m.tablet { 
+            display:none;
+         }
+    }
+}

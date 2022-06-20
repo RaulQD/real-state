@@ -1,0 +1,11 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.header{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    background-color: transparent;
+    z-index:100;
+}

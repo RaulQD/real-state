@@ -1,0 +1,56 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.footer{
+    &__container{
+        background-color: $colorMain;
+        padding:4rem 0;
+    }
+    &__grid{
+        @include m.grid(1,2rem);
+        @include m.tablet { 
+            @include m.grid(2,2rem);
+         }
+         @include m.desktop { 
+            @include m.grid(3,2rem);
+          }
+    }
+    &__logo{
+        width:25rem;
+        margin: 0 auto;
+        @include m.tablet { 
+            margin:0;
+         }
+    }
+    &__title{
+        color:$whiteColor;
+        margin-bottom:2rem;
+    }
+    &__items{
+        margin-bottom: 1rem;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
+    }
+    &__links{
+        color:$whiteColor;
+        font-size: 1.8rem;
+    }
+    &__info{
+        color:$whiteColor;
+        font-size: 1.8rem;
+        @include m.tablet { 
+            margin-bottom:0;
+         }
+    }
+}
+.copy{
+    background-color: darken($colorMain, 10%);
+    padding:1rem;
+    &__alright{
+        text-align: center;
+        color:$whiteColor;
+        margin:0;
+        font-size: 1.5rem;
+    }
+}

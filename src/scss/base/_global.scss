@@ -1,0 +1,44 @@
+@use 'base/variables'as *;
+@use 'base/mixins'as m;
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: $fontMain;
+    line-height: 1.5;
+    font-size: 1.6rem;
+    background-color: darken($greyColor, 3%);
+}
+
+.container {
+    max-width: 120rem;
+    width: 95%;
+    margin: 0 auto;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+}
+.section{
+    padding: 7.5rem 1.6rem;
+    @include m.tablet { 
+        padding: 11rem 1.6rem;
+     }
+}

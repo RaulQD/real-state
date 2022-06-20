@@ -1,0 +1,62 @@
+@use 'base/variables' as *;
+@use 'base/mixins' as m;
+
+.prop{
+    margin-top: 2rem;
+    @include m.tablet { 
+        margin-top:0;
+     }
+
+     &__title{
+        @include m.heading;
+        
+     }
+     &__grid{
+        margin-top: 4rem;
+        @include m.grid(1,2rem);
+        @include m.tablet { 
+            @include m.grid(2,2rem);
+         }
+         @include m.desktop { 
+            @include m.grid(3,2rem);
+          }
+     }
+
+}
+.propiedad{
+    background-color: $whiteColor;
+    &__image{
+        aspect-ratio: 10/6;
+        background-size: auto 150%;
+        // background-repeat: no-repeat;
+        position: relative;
+
+    }
+    @for $i from 1 through 6 {
+        $imagen: '../img/propiedad_' + $i + '.jpg';
+        &:nth-child(#{$i}) &__image{
+            background-image: linear-gradient(to bottom, transparentize($blackColor, 1%) 0%, transparentize($blackColor, .3%)100%),url($imagen);
+        }
+    }
+    &__name{
+        position: absolute;
+        color:$whiteColor;
+        font-size:2.4rem;
+        bottom:1rem;
+        left: 1rem;
+    }
+    &__content{
+        padding:2rem;
+    }
+    &__info{
+        margin-bottom:0;
+    }
+    &__precio{
+        font-size: 2.8rem;
+    }
+    &__button{
+        @include m.button($colorMain,$whiteColor);
+        display: block;
+        border-radius: 1rem;
+    }
+}
